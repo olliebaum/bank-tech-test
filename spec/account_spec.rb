@@ -2,6 +2,11 @@ require 'account'
 require 'timecop'
 
 describe Account do
+  before(:each) do
+    Timecop.freeze(DateTime.now)
+    mock_transaction = double("mock_transaction", add_transaction: nil, list: { date: DateTime.now, amount: 100, balance: 100 })
+    subject { Account.new(mock_transaction) }
+  end
   context '#initialize' do
     it 'has a starting balance of 0' do
       expect(subject.balance).to eq 0
@@ -22,11 +27,9 @@ describe Account do
   end
   context '#statement' do
     it 'can print out a deposit transaction' do
-      Timecop.freeze(DateTime.now)
-      date1 = DateTime.now
       subject.deposit(100)
       statement_str = "date || credit || debit || balance\n" +
-        "#{date1} || 100 || || 100\n"
+        "#{DateTime.now} || 100 || || 100\n"
       expect{subject.statement}.to output(statement_str).to_stdout
     end
   end
