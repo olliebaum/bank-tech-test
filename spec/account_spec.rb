@@ -1,6 +1,6 @@
 require 'account'
 
-describe Account
+describe Account do
   context '#initialize' do
     it 'has a starting balance of 0' do
       expect(subject.balance).to eq 0
