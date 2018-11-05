@@ -1,8 +1,9 @@
 class Account
   attr_reader :balance
 
-  def initialize
+  def initialize(transactions = TransactionHistory.new)
     @balance = 0
+    @transactions = transactions
   end
 
   def deposit(sum)
