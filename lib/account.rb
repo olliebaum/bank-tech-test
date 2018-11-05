@@ -17,9 +17,6 @@ class Account
   end
 
   def statement
-    puts "date || credit || debit || balance"
-    @transactions.list.each {|tr|
-      puts "#{tr[:date]} || #{tr[:amount]} || || #{tr[:balance]}"
-    }
+    printer.new(@transactions.list).print
   end
 end

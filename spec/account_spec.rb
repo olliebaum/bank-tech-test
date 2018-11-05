@@ -25,12 +25,4 @@ describe Account do
       expect(subject.balance).to eq 90
     end
   end
-  context '#statement' do
-    it 'can print out a deposit transaction' do
-      subject.deposit(100)
-      statement_str = "date || credit || debit || balance\n" +
-        "#{DateTime.now} || 100 || || 100\n"
-      expect{subject.statement}.to output(statement_str).to_stdout
-    end
-  end
 end
