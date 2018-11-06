@@ -6,7 +6,7 @@ class StatementPrinter
   def print
     puts "date || credit || debit || balance"
     @transactions.each do |tr|
-      puts "#{tr[:date]} || #{tr[:amount]} || || #{tr[:balance]}"
+        puts "#{tr[:date]} || #{tr[:credit]} || #{tr[:debit]} || #{tr[:balance]}"
     end
   end
 end

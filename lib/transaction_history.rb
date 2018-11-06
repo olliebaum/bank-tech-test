@@ -5,7 +5,7 @@ class TransactionHistory
     @list = []
   end
 
-  def add_transaction(date, amount, balance)
-    @list << { date: date, amount: amount, balance: balance }
+  def add_transaction(date, credit = nil, debit = nil, balance)
+    @list << { date: date, credit: credit, debit: debit, balance: balance }
   end
 end

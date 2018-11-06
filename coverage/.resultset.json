@@ -29,14 +29,6 @@
         1,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/ollie/Projects/GitHub/bank-tech-test/lib/account.rb": [
@@ -69,9 +61,21 @@
         null,
         1,
         1,
-        1,
+        2,
         null,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        2,
+        null,
+        null,
         1,
         1,
         null,
@@ -89,13 +93,13 @@
       "/Users/ollie/Projects/GitHub/bank-tech-test/lib/statement_printer.rb": [
         1,
         1,
-        1,
+        2,
         null,
         null,
         1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
         null,
         null,
         null
@@ -127,6 +131,6 @@
         null
       ]
     },
-    "timestamp": 1541442318
+    "timestamp": 1541497938
   }
 }

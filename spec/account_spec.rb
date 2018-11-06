@@ -4,7 +4,7 @@ require 'timecop'
 describe Account do
   before(:each) do
     Timecop.freeze(DateTime.now)
-    mock_transaction = double("mock_transaction", add_transaction: nil, list: { date: DateTime.now, amount: 100, balance: 100 })
+    mock_transaction = double("mock_transaction", add_transaction: nil, list: { date: DateTime.now, credit: 100, balance: 100 })
     subject { Account.new(mock_transaction) }
   end
   context '#initialize' do

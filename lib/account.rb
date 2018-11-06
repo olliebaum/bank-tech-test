@@ -8,12 +8,12 @@ class Account
 
   def deposit(sum)
     @balance += sum
-    @transactions.add_transaction(DateTime.now, +sum, @balance)
+    @transactions.add_transaction(DateTime.now, sum, nil, @balance )
   end
 
   def withdraw(sum)
     @balance -= sum
-    @transactions.add_transaction(DateTime.now, -sum, @balance)
+    @transactions.add_transaction(DateTime.now, nil, sum, @balance )
   end
 
   def statement
