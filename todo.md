@@ -1,2 +1,3 @@
-- [ ] Make sure users can't withdraw/deposit negative numbers
-- [ ] Test that users can't go below their balance
+- [x] Make sure users can't withdraw/deposit negative numbers
+- [x] Test that users can't go below their balance
+- [ ] Ensure statement shows transactions in reverse date order
