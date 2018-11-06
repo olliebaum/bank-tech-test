@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-06T11:54:25+00:00">2018-11-06T11:54:25+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-06T12:05:17+00:00">2018-11-06T12:05:17+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -500,25 +500,25 @@
         <li class="covered" data-hits="6" data-linenumber="5">
           <span class="hits">6</span>
           
-          <code class="ruby">  let(:mock_transaction) { spy(&quot;mock_transaction&quot;, add_transaction: nil, list: { date: DateTime.now, credit: 100, balance: 100 }) }</code>
+          <code class="ruby">  let(:mock_transactions) { instance_double(TransactionHistory, add_transaction: nil, list: { date: DateTime.now, credit: 100, balance: 100 }) }</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="6">
           <span class="hits">6</span>
           
-          <code class="ruby">  let(:mock_printer_1) { spy(&quot;StatementPrinter&quot;) }</code>
+          <code class="ruby">  let(:mock_printer_1) { instance_double(StatementPrinter, print: &quot;received&quot;) }</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="7">
           <span class="hits">6</span>
           
-          <code class="ruby">  let(:mock_printer_class) { spy(&quot;mock_printer_class&quot;, new: mock_printer_1) }</code>
+          <code class="ruby">  let(:mock_printer_class) { double(&quot;mock_printer_class&quot;, new: mock_printer_1) }</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="8">
           <span class="hits">6</span>
           
-          <code class="ruby">  subject { Account.new(mock_transaction, mock_printer_class) }</code>
+          <code class="ruby">  subject { Account.new(mock_transactions, mock_printer_class) }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">

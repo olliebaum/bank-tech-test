@@ -2,10 +2,10 @@ require 'account'
 require 'timecop'
 
 describe Account do
-  let(:mock_transaction) { spy("mock_transaction", add_transaction: nil, list: { date: DateTime.now, credit: 100, balance: 100 }) }
-  let(:mock_printer_1) { spy("StatementPrinter") }
-  let(:mock_printer_class) { spy("mock_printer_class", new: mock_printer_1) }
-  subject { Account.new(mock_transaction, mock_printer_class) }
+  let(:mock_transactions) { instance_double(TransactionHistory, add_transaction: nil, list: { date: DateTime.now, credit: 100, balance: 100 }) }
+  let(:mock_printer_1) { instance_double(StatementPrinter, print: "received") }
+  let(:mock_printer_class) { double("mock_printer_class", new: mock_printer_1) }
+  subject { Account.new(mock_transactions, mock_printer_class) }
   Timecop.freeze(DateTime.now)
 
   context '#initialize' do
