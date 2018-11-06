@@ -1,9 +1,10 @@
 class Account
   attr_reader :balance
 
-  def initialize(transactions = TransactionHistory.new)
+  def initialize(transactions = TransactionHistory.new, printer = StatementPrinter)
     @balance = 0
     @transactions = transactions
+    @printer = printer
   end
 
   def deposit(sum)
@@ -17,6 +18,6 @@ class Account
   end
 
   def statement
-    printer.new(@transactions.list).print
+    @printer.new(@transactions.list).print
   end
 end
