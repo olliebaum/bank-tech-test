@@ -16,6 +16,7 @@ class Account
   end
 
   def withdraw(sum)
+    raise "You can't withdraw more than your balance." if sum > @balance
     @balance -= sum
     @transactions.add_transaction(nil, sum, @balance)
   end

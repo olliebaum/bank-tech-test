@@ -1,1 +1,2 @@
 - [ ] Make sure users can't withdraw/deposit negative numbers
+- [ ] Test that users can't go below their balance
