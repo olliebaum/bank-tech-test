@@ -2,10 +2,11 @@ require 'date'
 
 class Account
   attr_reader :balance
+  INITIAL_BALANCE = 0
 
   def initialize(transactions = TransactionHistory.new,
                       printer = StatementPrinter)
-    @balance = 0
+    @balance = INITIAL_BALANCE
     @transactions = transactions
     @printer = printer
   end

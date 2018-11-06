@@ -15,8 +15,8 @@ describe Account do
   subject(:account) { Account.new(mock_transactions, mock_printer_class) }
 
   context '#initialize' do
-    it 'has a starting balance of 0' do
-      expect(account.balance).to eq 0
+    it 'sets the balance to INITIAL_BALANCE' do
+      expect(account.balance).to eq Account::INITIAL_BALANCE
     end
   end
 
@@ -51,7 +51,7 @@ describe Account do
     end
 
     it 'only accepts positive sums' do
-      expect{account.withdraw(-100)}.to raise_error('You can only withdraw positive sums.')
+      expect{ account.withdraw(-100) }.to raise_error('You can only withdraw positive sums.')
     end
 
     it 'delegate receives #add_transaction' do
