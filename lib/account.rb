@@ -11,11 +11,13 @@ class Account
   end
 
   def deposit(sum)
+    raise 'You can only deposit positive sums.' if sum.negative?
     @balance += sum
     @transactions.add_transaction(sum, nil, @balance)
   end
 
   def withdraw(sum)
+    raise 'You can only withdraw positive sums.' if sum.negative?
     raise "You can't withdraw more than your balance." if sum > @balance
     @balance -= sum
     @transactions.add_transaction(nil, sum, @balance)

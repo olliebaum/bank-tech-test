@@ -26,6 +26,10 @@ describe Account do
       expect(account.balance).to eq 100
     end
 
+    it 'only accepts positive sums' do
+      expect{account.deposit(-100)}.to raise_error('You can only deposit positive sums.')
+    end
+
     it 'delegate receives #add_transaction' do
       account.deposit(100)
       expect(mock_transactions).to have_received(:add_transaction).with(100, nil, 100)
@@ -42,12 +46,16 @@ describe Account do
       expect(account.balance).to eq 90
     end
 
-    it 'delegate receives #add_transaction' do
-      expect(mock_transactions).to have_received(:add_transaction).with(nil, 10, 90)
-    end
-
     it "can't go below balance" do
       expect{ account.withdraw(100) }.to raise_error("You can't withdraw more than your balance.")
+    end
+
+    it 'only accepts positive sums' do
+      expect{account.withdraw(-100)}.to raise_error('You can only withdraw positive sums.')
+    end
+
+    it 'delegate receives #add_transaction' do
+      expect(mock_transactions).to have_received(:add_transaction).with(nil, 10, 90)
     end
   end
 
