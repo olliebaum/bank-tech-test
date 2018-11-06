@@ -30,6 +30,10 @@ describe Account do
       expect{account.deposit(-100)}.to raise_error('You can only deposit positive sums.')
     end
 
+    it 'only accepts numbers to 2 decimal places' do
+      expect{ account.deposit(1.111) }.to raise_error('You can only deposit in whole pounds and pence.')
+    end
+
     it 'delegate receives #add_transaction' do
       account.deposit(100)
       expect(mock_transactions).to have_received(:add_transaction).with(100, nil, 100)
@@ -52,6 +56,10 @@ describe Account do
 
     it 'only accepts positive sums' do
       expect{ account.withdraw(-100) }.to raise_error('You can only withdraw positive sums.')
+    end
+
+    it 'only accepts numbers to 2 decimal places' do
+      expect{ account.withdraw(1.111) }.to raise_error('You can only withdraw in whole pounds and pence.')
     end
 
     it 'delegate receives #add_transaction' do
