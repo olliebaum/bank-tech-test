@@ -16,7 +16,7 @@ describe StatementPrinter do
       printer = StatementPrinter.new(transactions)
       statement_str = "date || credit || debit || balance\n" +
                       "#{formatted_date} || 100 ||  || 100\n"
-      expect{ printer.print }.to output(statement_str).to_stdout
+      expect { printer.print }.to output(statement_str).to_stdout
     end
 
     it 'displays a withdraw transaction' do
@@ -26,7 +26,7 @@ describe StatementPrinter do
       printer = StatementPrinter.new(transactions)
       statement_str = "date || credit || debit || balance\n" +
                       "#{formatted_date} ||  || 10 || 90\n"
-      expect{ printer.print }.to output(statement_str).to_stdout
+      expect { printer.print }.to output(statement_str).to_stdout
     end
   end
 end

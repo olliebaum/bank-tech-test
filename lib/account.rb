@@ -3,7 +3,8 @@ require 'date'
 class Account
   attr_reader :balance
 
-  def initialize(transactions = TransactionHistory.new, printer = StatementPrinter)
+  def initialize(transactions = TransactionHistory.new,
+                      printer = StatementPrinter)
     @balance = 0
     @transactions = transactions
     @printer = printer
@@ -11,12 +12,12 @@ class Account
 
   def deposit(sum)
     @balance += sum
-    @transactions.add_transaction(sum, nil, @balance )
+    @transactions.add_transaction(sum, nil, @balance)
   end
 
   def withdraw(sum)
     @balance -= sum
-    @transactions.add_transaction(nil, sum, @balance )
+    @transactions.add_transaction(nil, sum, @balance)
   end
 
   def statement

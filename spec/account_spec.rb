@@ -3,11 +3,14 @@ require 'account'
 describe Account do
   list1 = [{ credit: 100, balance: 100 }]
   let(:mock_transactions) {
-    instance_double(TransactionHistory, add_transaction: nil, list: list1) }
+    instance_double(TransactionHistory, add_transaction: nil, list: list1)
+  }  
   let(:mock_printer_1) {
-    instance_double(StatementPrinter, print: nil) }
+    instance_double(StatementPrinter, print: nil)
+  }  
   let(:mock_printer_class) {
-    double("mock_printer_class", new: mock_printer_1) }
+    double("mock_printer_class", new: mock_printer_1)
+  }  
 
   subject { Account.new(mock_transactions, mock_printer_class) }
 
