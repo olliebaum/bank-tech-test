@@ -1,3 +1,5 @@
+require 'date'
+
 class Account
   attr_reader :balance
 
@@ -9,12 +11,12 @@ class Account
 
   def deposit(sum)
     @balance += sum
-    @transactions.add_transaction(DateTime.now, sum, nil, @balance )
+    @transactions.add_transaction(sum, nil, @balance )
   end
 
   def withdraw(sum)
     @balance -= sum
-    @transactions.add_transaction(DateTime.now, nil, sum, @balance )
+    @transactions.add_transaction(nil, sum, @balance )
   end
 
   def statement
