@@ -1,4 +1,6 @@
 require 'date'
+require 'transaction_history'
+require 'statement_printer'
 
 class Account
   attr_reader :balance
