@@ -2,4 +2,7 @@
 - [x] Test that users can't go below their balance
 - [x] Ensure statement shows transactions in reverse date order
 - [x] Remove string formatting from TransactionHistory class, and move to StatementPrinter
-- [ ] Add feature tests
+- [x] Add feature tests
+- [ ] Combine TransactionHistory and StatementPrinter into single class.
+- [ ] Pass parameter to StatementPrinter #print instead of using state.
+- [ ] Inject StatementPrinter instance instead of class

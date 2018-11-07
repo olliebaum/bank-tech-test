@@ -7,7 +7,7 @@ class Account
   INITIAL_BALANCE = 0
 
   def initialize(transactions = TransactionHistory.new,
-                      printer = StatementPrinter)
+                      printer = StatementPrinter.new)
     @balance = INITIAL_BALANCE
     @transactions = transactions
     @printer = printer
@@ -29,6 +29,6 @@ class Account
   end
 
   def statement
-    @printer.new(@transactions.list).print
+    @printer.print(@transactions.list)
   end
 end
