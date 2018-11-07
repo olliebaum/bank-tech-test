@@ -2,3 +2,4 @@
 - [x] Test that users can't go below their balance
 - [x] Ensure statement shows transactions in reverse date order
 - [x] Remove string formatting from TransactionHistory class, and move to StatementPrinter
+- [ ] Add feature tests
