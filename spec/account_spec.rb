@@ -14,12 +14,6 @@ describe Account do
 
   subject(:account) { Account.new(mock_transactions, mock_printer_class) }
 
-  context '#initialize' do
-    it 'sets the balance to INITIAL_BALANCE' do
-      expect(account.balance).to eq Account::INITIAL_BALANCE
-    end
-  end
-
   context '#deposit' do
     it 'can add money to the account' do
       account.deposit(100)
