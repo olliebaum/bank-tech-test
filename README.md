@@ -41,6 +41,9 @@ Assuming you followed the steps in `How to install` above:
 To run the tests and see coverage:
 `rspec`
 
+To see detailed coverage:
+`open coverage/index.html`
+
 To run the linter:
 `rubocop`
 
