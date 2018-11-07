@@ -6,9 +6,8 @@ describe TransactionHistory do
     before { Timecop.freeze(Date.today) }
 
     it 'stores a transaction' do
-      date1 = Date.today.strftime("%d/%m/%Y")
       subject.add_transaction(100, nil, 100)
-      expect(subject.list).to eq [{ date: date1, credit: "100.00", debit: nil, balance: "100.00" }]
+      expect(subject.list).to eq [{ date: Date.today, credit: 100, debit: nil, balance: 100 }]
     end
   end
 end
