@@ -12,7 +12,6 @@ Practice tech test for week 10, Makers Academy
 - I have separated into three classes:
   - `Account`
   - `TransactionHistory`
-  - `StatementPrinter`
 
   My implementation raises errors for:
   - Negative deposits + withdrawals
@@ -55,7 +54,6 @@ Open 'irb' or 'pry' in the terminal...
 ```
 require './lib/account'
 require './lib/transaction_history'
-require './lib/statement_printer'
 ```
 
 Create a new Account
