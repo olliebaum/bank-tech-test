@@ -3,13 +3,10 @@ require 'account'
 describe Account do
   list1 = [{ credit: 100, balance: 100 }]
   let(:mock_transactions) {
-    instance_double(TransactionHistory, add_transaction: nil, list: list1)
-  }
-  let(:mock_printer) {
-    instance_double(StatementPrinter, print: nil)
+    instance_double(TransactionHistory, add_transaction: nil, print: nil)
   }
 
-  subject(:account) { Account.new(mock_transactions, mock_printer) }
+  subject(:account) { Account.new(mock_transactions) }
 
   context '#deposit' do
     it 'can add money to the account' do
@@ -61,7 +58,7 @@ describe Account do
   context '#statement' do
     it 'delegate receives #print' do
       account.statement
-      expect(mock_printer).to have_received(:print)
+      expect(mock_transactions).to have_received(:print)
     end
   end
 end

@@ -3,6 +3,8 @@
 - [x] Ensure statement shows transactions in reverse date order
 - [x] Remove string formatting from TransactionHistory class, and move to StatementPrinter
 - [x] Add feature tests
-- [ ] Combine TransactionHistory and StatementPrinter into single class.
-- [ ] Pass parameter to StatementPrinter #print instead of using state.
-- [ ] Inject StatementPrinter instance instead of class
+- [x] Pass parameter to StatementPrinter #print instead of using state.
+- [x] Inject StatementPrinter instance instead of class
+- [x] Combine TransactionHistory and StatementPrinter into single class.
+- [ ] Create private method to create the decimal currency string
+- [ ] Create predicate method to check if inputted number is decimal

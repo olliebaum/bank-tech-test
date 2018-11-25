@@ -1,16 +1,13 @@
 require 'date'
 require 'transaction_history'
-require 'statement_printer'
 
 class Account
   attr_reader :balance
   INITIAL_BALANCE = 0
 
-  def initialize(transactions = TransactionHistory.new,
-                      printer = StatementPrinter.new)
+  def initialize(transactions = TransactionHistory.new)
     @balance = INITIAL_BALANCE
     @transactions = transactions
-    @printer = printer
   end
 
   def deposit(sum)
@@ -29,6 +26,6 @@ class Account
   end
 
   def statement
-    @printer.print(@transactions.list)
+    @transactions.print
   end
 end
